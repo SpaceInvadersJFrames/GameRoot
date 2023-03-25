@@ -4,8 +4,8 @@ import java.util.*;
 import javax.swing.*;
 
 public class RootPanel extends JPanel implements Runnable {
-    static final int GAME_HEIGHT = 800;
-    static final int GAME_WIDTH = 700;
+    static final int GAME_HEIGHT = 600;
+    static final int GAME_WIDTH = 500;
     static final Dimension SCREEN_SIZE = new Dimension(GAME_WIDTH, GAME_HEIGHT);
     static final int ROCKET_HEIGHT = 40;
     static final int ROCKET_WIDTH = 30;
@@ -39,24 +39,26 @@ public class RootPanel extends JPanel implements Runnable {
 
     }
 
-    public void paint(Graphics g) { 
+    public void paint(Graphics g) {
 
     }
 
-    public void draw(Graphics g) { 
-
-    }
-    public void move() { 
+    public void draw(Graphics g) {
 
     }
 
-    public void checkCollision() { 
+    public void move() {
 
     }
 
-    public void run() { 
-        
+    public void checkCollision() {
+
     }
+
+    public void run() {
+
+    }
+
     public class AL extends KeyAdapter {
         public void keyPressed(KeyEvent e) {
 
