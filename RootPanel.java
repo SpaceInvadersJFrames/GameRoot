@@ -4,8 +4,8 @@ import java.util.*;
 import javax.swing.*;
 
 public class RootPanel extends JPanel implements Runnable {
-    static final int GAME_HEIGHT = 800;
-    static final int GAME_WIDTH = 800;
+    static final int GAME_HEIGHT = 750;
+    static final int GAME_WIDTH = 650;
     static final Dimension SCREEN_SIZE = new Dimension(GAME_WIDTH, GAME_HEIGHT);
     static final int ROCKET_HEIGHT = 40;
     static final int ROCKET_WIDTH = 30;

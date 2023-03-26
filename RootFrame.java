@@ -18,7 +18,9 @@ public class RootFrame extends JFrame {
         this.setBackground(new Color(9, 8, 26));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-        this.setLocation(365 ,5); // sets the window to the center of the screen
+        // this.setLocationRelativeTo(null); // sets the window to the center of the
+        // screen
+        this.setLocation(450, 5);
         this.setIconImage(icon.getImage()); // setting the favicon of the window
         this.pack();
     }
