@@ -54,7 +54,8 @@ public class Rocket {
     public void draw(Graphics g) {
         g.setColor(new Color(219, 155, 4));
         try {
-            ship = ImageIO.read(new File("E:\\rohu\\study\\javaprojectsubmission\\spaceinv\\rocketship.png"));
+            // "E:\\rohu\\study\\javaprojectsubmission\\spaceinv\\rocketship.png"
+            ship = ImageIO.read(new File("C:\\Users\\sonu_\\OneDrive\\Desktop\\SpaceInvader\\GameRoot\\rocketship.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
