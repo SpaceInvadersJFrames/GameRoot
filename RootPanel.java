@@ -7,8 +7,8 @@ public class RootPanel extends JPanel implements Runnable {
     static final int GAME_HEIGHT = 750;
     static final int GAME_WIDTH = 650;
     static final Dimension SCREEN_SIZE = new Dimension(GAME_WIDTH, GAME_HEIGHT);
-    static final int ROCKET_HEIGHT = 40;
-    static final int ROCKET_WIDTH = 30;
+    static final int ROCKET_HEIGHT = 192;
+    static final int ROCKET_WIDTH = 192;
     static final int ROCK_DIAMETER = 30;
 
     Thread gameThread;
@@ -32,7 +32,8 @@ public class RootPanel extends JPanel implements Runnable {
     }
 
     public void newRocket() {
-        playerRocket = new Rocket((GAME_WIDTH / 2) - (ROCKET_WIDTH / 2), ROCKET_HEIGHT, ROCKET_WIDTH, ROCKET_HEIGHT);
+        playerRocket = new Rocket((GAME_WIDTH / 2) - (ROCKET_WIDTH / 2), ROCKET_HEIGHT * 3, ROCKET_WIDTH,
+                ROCKET_HEIGHT);
     }
 
     public void newRocks() {
@@ -51,11 +52,17 @@ public class RootPanel extends JPanel implements Runnable {
     }
 
     public void move() {
-
+        playerRocket.move();
     }
 
     public void checkCollision() {
-
+        // stops rocket from going out of the screen
+        if (playerRocket.xPosition <= 0) {
+            playerRocket.xPosition = 0;
+        }
+        if (playerRocket.xPosition >= (GAME_WIDTH - ROCKET_WIDTH)) {
+            playerRocket.xPosition = GAME_WIDTH - ROCKET_WIDTH;
+        }
     }
 
     public void run() {
@@ -81,11 +88,11 @@ public class RootPanel extends JPanel implements Runnable {
 
     public class AL extends KeyAdapter {
         public void keyPressed(KeyEvent e) {
-
+            playerRocket.keyPressed(e);
         }
 
         public void keyReleased(KeyEvent e) {
-
+            playerRocket.keyReleased(e);
         }
     }
 }
