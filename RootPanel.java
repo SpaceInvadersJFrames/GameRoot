@@ -32,7 +32,7 @@ public class RootPanel extends JPanel implements Runnable {
     }
 
     public void newRocket() {
-
+        playerRocket = new Rocket((GAME_WIDTH / 2) - (ROCKET_WIDTH / 2), ROCKET_HEIGHT, ROCKET_WIDTH, ROCKET_HEIGHT);
     }
 
     public void newRocks() {
@@ -40,11 +40,14 @@ public class RootPanel extends JPanel implements Runnable {
     }
 
     public void paint(Graphics g) {
-
+        image = createImage(getWidth(), getHeight());
+        graphics = image.getGraphics();
+        draw(graphics);
+        g.drawImage(image, 0, 0, this);
     }
 
     public void draw(Graphics g) {
-
+        playerRocket.draw(g);
     }
 
     public void move() {
@@ -56,7 +59,24 @@ public class RootPanel extends JPanel implements Runnable {
     }
 
     public void run() {
+        // gameloop
+        long lastTime = System.nanoTime();
+        double fps = 60.0;
+        double ns = 1000000000 / fps; // ns -> nanoseconds
+        double delta = 0;
+        boolean running = true;
+        while (true) {
+            long now = System.nanoTime();
+            delta += (now - lastTime) / ns;
+            lastTime = now;
+            if (delta >= 1) {
+                move();
+                checkCollision();
+                repaint();
+                delta--;
 
+            }
+        }
     }
 
     public class AL extends KeyAdapter {

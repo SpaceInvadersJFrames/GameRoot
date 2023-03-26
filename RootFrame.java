@@ -8,7 +8,7 @@ public class RootFrame extends JFrame {
     RootPanel panel;
 
     RootFrame() {
-        // setting the icon of windoe
+        // setting the icon of window
         ImageIcon icon = new ImageIcon("invader.png");
 
         panel = new RootPanel();
